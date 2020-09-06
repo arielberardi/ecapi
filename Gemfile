@@ -7,6 +7,8 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rack-cors'
+gem 'devise'
+gem 'simple_token_authentication'
 
 group :development do
   gem 'listen', '~> 3.2'
