@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  devise_scope :user do
-    post 'api/sign_up', to: 'registrations#create', defaults: {format: :json}
-    post 'api/sign_in', to: 'sessions#create', defaults: {format: :json}
-    get 'api/confirmation', to: 'confirmations#show', defaults: {format: :json}
-  end
 
   namespace :api, defaults: {format: :json} do
-
+    devise_scope :user do
+      post 'sign_up',         to: 'registrations#create'
+      post 'sign_in',         to: 'sessions#create'
+      delete 'sign_out',      to: 'sessions#destroy'
+      post 'confirmation',    to: 'confirmations#show'
+      post 'password/edit',   to: 'registrations#update'
+      post 'password/forgot', to: 'passwords#create'
+      post 'password/reset',  to: 'passwords#update'
+      post 'unlock/create',   to: 'unlocks#create'
+      post 'unlock/reset',    to: 'unlocks#show'
+    end
   end
 
   post '/index', to: 'home#index', defaults: {format: :json}

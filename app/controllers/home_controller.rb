@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   def index
     render json: {
       status: 'ok',
-      response: 'This is a index test page'
+      response: 'This is a index test page',
     }, status: :ok
   end
 end

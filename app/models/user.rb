@@ -5,5 +5,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable
+         :confirmable, :lockable, :trackable
+
+  validates_presence_of :first_name, :last_name, :born_date, :address
 end

@@ -15,5 +15,6 @@ group :development do
   gem 'puma'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rspec-rails'
 end
 
