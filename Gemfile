@@ -12,9 +12,9 @@ gem 'simple_token_authentication'
 
 group :development do
   gem 'listen', '~> 3.2'
+  gem 'rspec-rails'
   gem 'puma'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rspec-rails'
 end
 

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users
 
   namespace :api, defaults: {format: :json} do
@@ -14,7 +13,12 @@ Rails.application.routes.draw do
       post 'unlock/create',   to: 'unlocks#create'
       post 'unlock/reset',    to: 'unlocks#show'
     end
-  end
+
+    resources :shopping_carts
+    resources :products
+    resources :categories
+    resources :subcategories
+  end 
 
   post '/index', to: 'home#index', defaults: {format: :json}
 end

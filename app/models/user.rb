@@ -8,4 +8,7 @@ class User < ApplicationRecord
          :confirmable, :lockable, :trackable
 
   validates_presence_of :first_name, :last_name, :born_date, :address
+
+  has_many :shopping_carts, dependent: :destroy
+  has_many :products, through: :shopping_carts
 end
